@@ -1,0 +1,14 @@
+elpa/
+eshell/
+session.*
+tramp
+auto-save-list/
+network-security.data
+url/
+*.bak
+*.bak~
+*~
+.*~
+.mc-lists.el
+.projectile.cache
+.projectile-bookmarks.eld
