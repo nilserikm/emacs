@@ -6,7 +6,9 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives
-         '("marmalade" . "http://marmalade-repo.org/packages/") t)
+	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+
 
 (require 'company)
 (require 'company-php)
@@ -40,7 +42,7 @@
 
 (load-user-file "general-settings.el")
 (load-user-file "keys.el")
-;; (load-user-file "my-colors.el")
+ (load-user-file "my-colors.el")
 (load-user-file "tabbar.el")
 (load-user-file "neotree.el")
 (load-user-file "custom-functions.el")
@@ -75,3 +77,18 @@
  (if current-t43m3 (disable-theme current-t43m3))
  (setq current-t43m3 theme) 
  (load-theme theme t))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (color-theme-github smartparens company-quickhelp yasnippet neotree magit js2-mode helm-projectile flycheck fill-column-indicator expand-region dumb-jump company-tern company-php all-the-icons)))
+ '(tabbar-separator (quote (0.5))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
