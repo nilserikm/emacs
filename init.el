@@ -1,14 +1,51 @@
 ;;; package --- Summary:
 ;;; Commentary:
 ;;; Code:
+
+; list the packages you want
+(setq package-list '(
+		     all-the-icons
+		     company
+		     company-php
+		     dumb-jump
+		     expand-region
+		     fill-column-indicator
+		     flycheck
+		     helm
+		     helm-projectile
+		     js2-mode
+		     neotree
+		     php-mode
+		     popup
+		     projectile
+		     tabbar
+		     tramp
+		     yasnippet
+		     ))
+
 (require 'package)
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; (add-to-list 'package-archives
+;; 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (package-initialize)
+
+; list the repositories containing them
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
 
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 (require 'company)
 (require 'company-php)
