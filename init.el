@@ -22,8 +22,8 @@
 (require 'popup) ; use popup menu for yas-choose-value
 (require 'projectile)
 (require 'tabbar)
-(require 'yasnippet)
 (require 'tramp)
+(require 'yasnippet)
 
 (defconst user-init-dir
   (cond ((boundp 'user-emacs-directory)
@@ -75,29 +75,3 @@
  (if current-t43m3 (disable-theme current-t43m3))
  (setq current-t43m3 theme) 
  (load-theme theme t))
-
-;; left-over comments in regards to loading themes/neotree after/in conjunction with emacs as daemon
-;;(if (daemonp)
-;;    (add-hook 'after-make-frame-functions
-;;        (lambda (frame)
-;;            (with-selected-frame frame
-;;          (load-theme 'nord t)
-;;          (load-theme 'airline-papercolor t)
-;;          neo-theme (if (display-graphic-p) 'icons 'arrow)
-;;          )))
-;;  (load-theme 'nord t))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("be5b03913a1aaa3709d731e1fcfd4f162db6ca512df9196c8d4693538fa50b86" "a455366c5cdacebd8adaa99d50e37430b0170326e7640a688e9d9ad406e2edfd" "4c8372c68b3eab14516b6ab8233de2f9e0ecac01aaa859e547f902d27310c0c3" default)))
- '(tabbar-separator (quote (0.5))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

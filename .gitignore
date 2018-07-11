@@ -1,5 +1,22 @@
+<<<<<<< HEAD
 *~
 .*~
 *.elc
 elpa/
 auto-save-list/
+=======
+elpa/
+eshell/
+session.*
+tramp
+auto-save-list/
+network-security.data
+url/
+*.bak
+*.bak~
+*~
+.*~
+.mc-lists.el
+.projectile.cache
+.projectile-bookmarks.eld
+>>>>>>> 46a95a31cad3cd3d101cfab018170cf544ad9c10

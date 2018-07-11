@@ -41,11 +41,9 @@
   (global-company-mode)
   (yas-global-mode 1)
   (tabbar-mode t)
-
   (add-hook 'imenu-list-after-jump-hook #'imenu-list-quit-window)
 
   (define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode) ; fill-column-indicator minor mode custom
 
   (message "Progging ..."))
-
 ;; (add-to-list 'default-frame-alist '(background-color . "#303e4d"))

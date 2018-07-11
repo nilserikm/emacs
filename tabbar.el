@@ -3,6 +3,7 @@
 ;; Tabbar settings
 (set-face-attribute
  'tabbar-default nil
+
  ;; dark
  :background "gray20"
  :foreground "gray20"
@@ -70,7 +71,6 @@
  ;; :background "white"
  ;; :height 0.6
  )
-
 ;; Change padding of the tabs
 ;; we also need to set separator to avoid overlapping tabs by highlighted tabs
 (custom-set-variables

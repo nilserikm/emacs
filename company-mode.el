@@ -12,7 +12,6 @@
           (lambda ()
             (add-to-list (make-local-variable 'company-backends)
                          'company-anaconda)))
-
 (dolist (hook '(js-mode-hook
                 js2-mode-hook
                 js3-mode-hook

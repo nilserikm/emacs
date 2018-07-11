@@ -5,7 +5,9 @@
   (smartparens-mode)
   (show-paren-mode)
   (ac-php-core-eldoc-setup)
+  
   ;; (make-local-variable 'company-backends)
+  (make-local-variable 'company-backends)
   (fci-mode 1)
 
   (add-to-list 'company-backends 'company-ac-php-backend)
@@ -15,3 +17,4 @@
 
 (add-hook 'php-mode-hook 'my-php-mode-hook)
 (add-hook 'php-mode-hook 'my-progging-hook)
+

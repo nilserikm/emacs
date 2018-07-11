@@ -1,7 +1,5 @@
 (defun my-js2-mode-hook ()
   "Simple js2-mode hook."
-
-  ;; set up the company mode
   (dolist (hook '(js-mode-hook
                 js2-mode-hook
                 js3-mode-hook
