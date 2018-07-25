@@ -1,76 +1,77 @@
 ;; Tabbar
 (require 'tabbar)
-;; Tabbar settings
-(set-face-attribute
+;; tabbar settings light-theme
+;; (set-face-attribute
+;;  'tabbar-default nil
+;;  :background "white"
+;;  :foreground "white"
+;;  :box '(:line-width 1 :color "white" :style nil))
+
+;; (set-face-attribute
+;;  'tabbar-unselected nil
+;;  :background "LavenderBlush2"
+;;  :foreground "black"
+;;  :box '(:line-width 5 :color "LavenderBlush2" :style nil))
+
+;; (set-face-attribute
+;;  'tabbar-selected nil
+;;  :background "light steel blue"
+;;  :foreground "white"
+;;  :box '(:line-width 5 :color "light steel blue" :style nil))
+
+;; (set-face-attribute
+;;  'tabbar-highlight nil
+;;   :background "white"
+;;  :foreground "black"
+;;  :underline nil
+;;  :box '(:line-width 5 :color "white" :style nil))
+
+;; (set-face-attribute
+;;  'tabbar-button nil
+;;  :box '(:line-width 1 :color "gray20" :style nil))
+
+;; (set-face-attribute
+;;  'tabbar-separator nil
+;;   :background "white"
+;;  :height 0.6)
+
+;; tabbar-settings for nord-theme
+ (set-face-attribute
  'tabbar-default nil
-
- ;; dark
- ;; :background "gray20"
- ;; :foreground "gray20"
- ;; :box '(:line-width 1 :color "gray20" :style nil)
-
-;; ;; light
- :background "white"
- :foreground "white"
- :box '(:line-width 1 :color "white" :style nil)
- )
+  :background "gray20"
+ :foreground "gray20"
+ :box '(:line-width 1 :color "gray20" :style nil))
 
 (set-face-attribute
  'tabbar-unselected nil
- ;; dark
- ;; :background "gray30"
- ;; :foreground "white"
- ;; :box '(:line-width 5 :color "gray30" :style nil)
+ :background "gray30"
+ :foreground "white"
+ :box '(:line-width 5 :color "gray30" :style nil))
 
- ;; ;; light
- :background "LavenderBlush2"
- :foreground "black"
- :box '(:line-width 5 :color "LavenderBlush2" :style nil)
- )
+ 
 
 (set-face-attribute
  'tabbar-selected nil
- ;; dark
- ;; :background "gray75"
- ;; :foreground "black"
- ;; :box '(:line-width 5 :color "gray75" :style nil)
-
- ;; ;; light
- :background "light steel blue"
- :foreground "white"
- :box '(:line-width 5 :color "light steel blue" :style nil)
- )
+ :background "gray75"
+ :foreground "black"
+ :box '(:line-width 5 :color "gray75" :style nil))
 
 (set-face-attribute
  'tabbar-highlight nil
- ;; dark
- ;; :background "white"
- ;; :foreground "black"
- ;; :underline nil
- ;; :box '(:line-width 5 :color "white" :style nil)
-
- ;; light
- :background "white"
+  :background "white"
  :foreground "black"
  :underline nil
- :box '(:line-width 5 :color "white" :style nil)
- )
+ :box '(:line-width 5 :color "white" :style nil))
 
 (set-face-attribute
  'tabbar-button nil
- :box '(:line-width 1 :color "gray20" :style nil)
- )
+ :box '(:line-width 1 :color "gray20" :style nil))
 
 (set-face-attribute
  'tabbar-separator nil
- ;; dark
- ;; :background "gray20"
- ;; :height 0.6
+ :background "gray20"
+ :height 0.6)
 
- ;; ;; light
- :background "white"
- :height 0.6
- )
 ;; Change padding of the tabs
 ;; we also need to set separator to avoid overlapping tabs by highlighted tabs
 (custom-set-variables

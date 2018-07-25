@@ -1,1 +1,1 @@
-("/var/www/lister/" "/var/www/dev/" "/var/www/test-db-with-foreign/" "/var/www/test-db-with-entity-column/")
+("/var/www/dev/" "~/.emacs.d/" "/var/www/lister/" "/var/www/test-db-with-foreign/" "/var/www/test-db-with-entity-column/")

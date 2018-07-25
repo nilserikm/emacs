@@ -1,3 +1,10 @@
+;; make emacs retain fat cursor on empty lines/spaces as well
+(defun cursor-shape-hook ()
+    (if (equal (thing-at-point 'line) "\n") (setq cursor-type 'block)
+       (setq cursor-type 'box)))
+
+(add-hook 'post-command-hook 'cursor-shape-hook)
+
 ;; make C-a go to beginning of line first
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.

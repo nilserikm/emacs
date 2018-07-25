@@ -1,5 +1,7 @@
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow)
       neo-autorefresh nil)
 
-(neotree-toggle)
+(setq neo-window-width 30)
+
+;; (neotree-toggle)
 

@@ -18,7 +18,7 @@
 		     php-mode
 		     popup
 		     projectile
-		     tabbar
+		     ;; tabbar
 		     tramp
 		     yasnippet
 		     ))
@@ -33,6 +33,7 @@
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ; activate all the packages (in particular autoloads)
@@ -47,6 +48,7 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+(require 'color-theme)
 (require 'company)
 (require 'company-php)
 (require 'dumb-jump)
@@ -119,13 +121,27 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
  '(package-selected-packages
    (quote
-    (color-theme-github smartparens company-quickhelp yasnippet neotree magit js2-mode helm-projectile flycheck fill-column-indicator expand-region dumb-jump company-tern company-php all-the-icons)))
- '(tabbar-separator (quote (0.5))))
+    (nord-theme js2-refactor highlight-symbol web-mode airline-themes yasnippet smartparens paper-theme neotree multiple-cursors magit js2-mode helm-projectile flycheck fill-column-indicator expand-region dumb-jump company-tern company-quickhelp company-php color-theme-sanityinc-tomorrow color-theme-github all-the-icons)))
+ '(show-paren-mode t)
+ '(tabbar-separator (quote (0.5)))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Ubuntu Mono" :foundry "DAMA" :slant normal :weight normal :height 159 :width normal))))
+ '(font-lock-comment-face ((t (:foreground "rosy brown"))))
+ '(font-lock-doc-face ((t (:foreground "rosy brown"))))
+ '(git-commit-overlong-summary ((t (:background "rosy brown"))))
+ '(lazy-highlight ((t (:background "light steel blue" :foreground "black"))))
+ '(region ((t (:background "light steel blue" :foreground "black"))))
+ '(neo-dir-link-face ((t (:slant normal :weight bold :height 140 :family "Ubuntu Mono"))))
+ '(neo-file-link-face ((t (:weight normal :height 140 :family "Ubuntu Mono"))))
+ '(web-mode-comment-face ((t (:foreground "rosy brown")))))
