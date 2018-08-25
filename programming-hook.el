@@ -32,8 +32,8 @@
 	 )  
 
   ;; start projectile mode
-  (projectile-global-mode t)
-  (helm-projectile-on)
+  ;; (projectile-global-mode t)
+  ;; (helm-projectile-on)
   
   (global-hl-line-mode 1) ; highlight current line
   

@@ -1,17 +1,24 @@
+;;; package --- Summary:
+;;; Commentary:
+;;; Code:
 (defun my-js2-mode-hook ()
   "Simple js2-mode hook."
-  (dolist (hook '(js-mode-hook
-                js2-mode-hook
-                js3-mode-hook
-                inferior-js-mode-hook
-                ))
-  (add-hook hook
-            (lambda ()
-              (tern-mode t)
-              (add-to-list (make-local-variable 'company-backends)
-                           'company-tern)
-              )))
 
+  (defvar js-indent-level)
+  (defvar js2-auto-indent-p)
+  (defvar js2-cleanup-whitespace)
+  (defvar js2-enter-indents-newline)
+  (defvar js2-indent-on-enter-key)
+  (defvar js2-mode-indent-ignore-first-tab)
+  (defvar tern-mode-keymap)
+  (defvar js-mode-map)
+  (defvar company-backends)
+  
+  (add-to-list 'company-backends 'company-tern)
+  (add-hook 'js2-mode-hook (lambda ()
+			     (tern-mode)
+			     (company-mode)))
+  
   ;; keybindings
   (local-set-key (kbd "RET") (key-binding (kbd "M-j")))
 
@@ -19,12 +26,9 @@
     js2-auto-indent-p t
     js2-cleanup-whitespace t
     js2-enter-indents-newline t
-    js2-indent-on-enter-key t    
-    ;; js2-highlight-vars-mode t ; js2-highlight-vars does not yet work with export default {}
+    js2-indent-on-enter-key t
+    js2-highlight-vars-mode t ; js2-highlight-vars does not yet work with export default {}
     js2-mode-indent-ignore-first-tab t)
-
-  ;; (imenu-after-jump-hook 'imenu-list-quit-window)
-  ;; (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
 
   ;; Disable tern-mode completion keybindings,
   ;; as we use xref-js2 instead
@@ -35,21 +39,20 @@
   ;; which conflicts with xref, so unbind it.
   (define-key js-mode-map (kbd "M-.") nil)
 
-  (tern-mode)
   (company-mode)
+  (tern-mode)
   (smartparens-mode)
-  (show-paren-mode)
   (fci-mode 1)
   (js2-imenu-extras-mode)
   (highlight-symbol-mode)
   (js2-refactor-mode)
-  ;; (if (featurep 'js2-highlight-vars)
-  ;;     (js2-highlight-vars-mode))
-
-  (add-to-list 'company-dabbrev-code-modes 'js2-mode)
+  (yas-global-mode)
 
   (message "My JS2 mode hook"))
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
 (add-hook 'js2-mode-hook 'my-progging-hook)
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
+
+(provide 'js2-hook)
+;;; js2-hook.el ends here

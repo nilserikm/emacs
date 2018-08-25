@@ -7,29 +7,23 @@
 		     all-the-icons
 		     company
 		     company-php
+		     company-tern
 		     dumb-jump
 		     expand-region
 		     fill-column-indicator
 		     flycheck
 		     helm
+		     projectile
 		     helm-projectile
 		     js2-mode
 		     neotree
 		     php-mode
 		     popup
-		     projectile
-		     ;; tabbar
 		     tramp
 		     yasnippet
 		     ))
 
 (require 'package)
-;; (add-to-list 'package-archives
-;;              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;; (add-to-list 'package-archives
-;; 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;; (package-initialize)
-
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
@@ -49,19 +43,21 @@
     (package-install package)))
 
 (require 'color-theme)
+(require 'all-the-icons)
 (require 'company)
 (require 'company-php)
+(require 'company-tern)
 (require 'dumb-jump)
 (require 'expand-region)
 (require 'fill-column-indicator)
 (require 'flycheck)
 (require 'helm)
+(require 'projectile)
 (require 'helm-projectile)
 (require 'js2-mode)
 (require 'neotree)
 (require 'php-mode)
 (require 'popup) ; use popup menu for yas-choose-value
-(require 'projectile)
 (require 'tabbar)
 (require 'tramp)
 (require 'yasnippet)
@@ -80,8 +76,7 @@
   (load-file (expand-file-name file user-init-dir)))
 
 (load-user-file "general-settings.el")
-(load-user-file "keys.el")
- (load-user-file "my-colors.el")
+(load-user-file "my-colors.el")
 (load-user-file "tabbar.el")
 (load-user-file "neotree.el")
 (load-user-file "custom-functions.el")
@@ -95,6 +90,14 @@
 (load-user-file "java-hook.el")
 (load-user-file "web-hook.el")
 (load-user-file "nlinum-hook.el")
+(load-user-file "keys.el")
+
+;; start projectile mode
+(projectile-global-mode t)
+(helm-projectile-on)
+
+;; start company mode after init
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; SECTION : MODES LIST
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
@@ -103,9 +106,6 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-
-(projectile-mode t)
-(helm-mode t)
 
 ;; make load-theme unload/disable current first
 (defadvice load-theme (before theme-dont-propagate activate)
@@ -127,7 +127,7 @@
    ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
  '(package-selected-packages
    (quote
-    (nord-theme js2-refactor highlight-symbol web-mode airline-themes yasnippet smartparens paper-theme neotree multiple-cursors magit js2-mode helm-projectile flycheck fill-column-indicator expand-region dumb-jump company-tern company-quickhelp company-php color-theme-sanityinc-tomorrow color-theme-github all-the-icons)))
+    (nlinum nord-theme js2-refactor highlight-symbol web-mode airline-themes yasnippet smartparens paper-theme neotree multiple-cursors magit js2-mode helm-projectile flycheck fill-column-indicator expand-region dumb-jump company-tern company-quickhelp company-php color-theme-sanityinc-tomorrow color-theme-github all-the-icons)))
  '(show-paren-mode t)
  '(tabbar-separator (quote (0.5)))
  '(tool-bar-mode nil))
@@ -140,8 +140,11 @@
  '(font-lock-comment-face ((t (:foreground "rosy brown"))))
  '(font-lock-doc-face ((t (:foreground "rosy brown"))))
  '(git-commit-overlong-summary ((t (:background "rosy brown"))))
+ '(js2-jsdoc-value ((t (:foreground "indian red"))))
  '(lazy-highlight ((t (:background "light steel blue" :foreground "black"))))
- '(region ((t (:background "light steel blue" :foreground "black"))))
  '(neo-dir-link-face ((t (:slant normal :weight bold :height 140 :family "Ubuntu Mono"))))
- '(neo-file-link-face ((t (:weight normal :height 140 :family "Ubuntu Mono"))))
+ '(neo-file-link-face ((t (:foreground "#D8DEE9" :weight normal :height 140 :family "Ubuntu Mono"))))
+ '(neo-header-face ((t (:foreground "White" :height 0.75))))
+ '(neo-root-dir-face ((t (:foreground "#8FBCBB" :weight bold :height 0.75))))
+ '(region ((t (:background "light steel blue" :foreground "black"))))
  '(web-mode-comment-face ((t (:foreground "rosy brown")))))
